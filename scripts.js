@@ -108,12 +108,31 @@ document.addEventListener('DOMContentLoaded', function () {
         "Design a sustainability strategy for a consumer electronics product."
     ];
 
-    let currentTaskIndex = 0;
+     let currentTaskIndex = 0;
     let filteredTasks = tasks;
 
     function loadTask(index) {
         taskContainer.textContent = filteredTasks[index];
     }
+
+    function filterTasks(query) {
+        return tasks.filter(task => task.toLowerCase().includes(query.toLowerCase()));
+    }
+
+    searchInput.addEventListener('input', function () {
+        const query = searchInput.value.trim();
+        if (query === '') {
+            filteredTasks = tasks;
+        } else {
+            filteredTasks = filterTasks(query);
+        }
+        currentTaskIndex = 0;
+        if (filteredTasks.length > 0) {
+            loadTask(currentTaskIndex);
+        } else {
+            taskContainer.textContent = 'No tasks found.';
+        }
+    });
 
     prevTaskBtn.addEventListener('click', function () {
         if (currentTaskIndex > 0) {
@@ -126,17 +145,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (currentTaskIndex < filteredTasks.length - 1) {
             currentTaskIndex++;
             loadTask(currentTaskIndex);
-        }
-    });
-
-    searchBtn.addEventListener('click', function () {
-        const query = searchInput.value.toLowerCase();
-        filteredTasks = tasks.filter(task => task.toLowerCase().includes(query));
-        currentTaskIndex = 0;
-        if (filteredTasks.length > 0) {
-            loadTask(currentTaskIndex);
-        } else {
-            taskContainer.textContent = 'No tasks found.';
         }
     });
 

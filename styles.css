@@ -4,16 +4,20 @@ body {
     padding: 0;
     background-color: #ffffff;
     color: #2C4E6E;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 header {
-    text-align: center;
     background-color: #D5E2ED;
     padding: 20px;
     width: 100%;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 header h1 {
@@ -34,26 +38,56 @@ header p {
 
 #hero-section {
     width: 100%;
-    text-align: center;
-    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
 #hero-image {
-    width: 100%;
-    max-width: 800px;
+    width: 50%;
+    max-width: 600px;
     height: auto;
     border-radius: 10px;
 }
 
+.hero-text {
+    padding-left: 20px;
+    text-align: left;
+}
+
+.hero-text h2 {
+    font-size: 1.8em;
+    margin: 0;
+    color: #2C4E6E;
+}
+
+.hero-text p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
 #task-section {
     text-align: center;
-    margin: 20px 0;
+    margin: 20px auto;
     padding: 20px;
     background-color: #f9f9f9;
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#task-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #2C4E6E;
+}
+
+#task-container {
+    margin-bottom: 20px;
+    font-size: 2.5em; /* Very large font for daily tasks */
+    color: #2C4E6E;
 }
 
 #search-container {
@@ -94,12 +128,6 @@ header p {
     margin: 10px;
 }
 
-#task-container {
-    margin-bottom: 20px;
-    font-size: 1.2em;
-    color: #2C4E6E;
-}
-
 footer {
     text-align: center;
     font-size: 0.8em;
@@ -119,6 +147,27 @@ footer {
 
     header p {
         font-size: 1em;
+    }
+
+    #hero-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    #hero-image {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+
+    .hero-text {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    #task-container {
+        font-size: 2em; /* Adjusted size for smaller screens */
     }
 
     #search-input {
