@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const taskContainer = document.getElementById('task-container');
     const prevTaskBtn = document.getElementById('prev-task-btn');
     const nextTaskBtn = document.getElementById('next-task-btn');
+    const searchInput = document.getElementById('search-input');
+    const searchBtn = document.getElementById('search-btn');
 
     const tasks = [
         "Create a product vision statement for a fitness app.",
@@ -123,6 +125,17 @@ document.addEventListener('DOMContentLoaded', function () {
         if (currentTaskIndex < tasks.length - 1) {
             currentTaskIndex++;
             loadTask(currentTaskIndex);
+        }
+    });
+
+    searchBtn.addEventListener('click', function () {
+        const query = searchInput.value.toLowerCase();
+        filteredTasks = tasks.filter(task => task.toLowerCase().includes(query));
+        currentTaskIndex = 0;
+        if (filteredTasks.length > 0) {
+            loadTask(currentTaskIndex);
+        } else {
+            taskContainer.textContent = 'No tasks found.';
         }
     });
 

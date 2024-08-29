@@ -69,3 +69,33 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+#search-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#search-input {
+    padding: 10px;
+    font-size: 1em;
+    width: 80%;
+    max-width: 400px;
+    border: 2px solid #6200ea;
+    border-radius: 5px;
+    outline: none;
+}
+
+#search-btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #6200ea;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#search-btn:hover {
+    background-color: #3700b3;
+}
