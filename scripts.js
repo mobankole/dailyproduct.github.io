@@ -109,9 +109,10 @@ document.addEventListener('DOMContentLoaded', function () {
     ];
 
     let currentTaskIndex = 0;
+    let filteredTasks = tasks;
 
     function loadTask(index) {
-        taskContainer.textContent = tasks[index];
+        taskContainer.textContent = filteredTasks[index];
     }
 
     prevTaskBtn.addEventListener('click', function () {
@@ -122,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     nextTaskBtn.addEventListener('click', function () {
-        if (currentTaskIndex < tasks.length - 1) {
+        if (currentTaskIndex < filteredTasks.length - 1) {
             currentTaskIndex++;
             loadTask(currentTaskIndex);
         }
