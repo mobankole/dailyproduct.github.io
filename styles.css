@@ -36,6 +36,34 @@ header p {
     margin-bottom: 20px;
 }
 
+nav {
+    background-color: #2C4E6E;
+    padding: 10px 0;
+}
+
+.navbar {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px;
+}
+
+.navbar a.active {
+    border-bottom: 2px solid #D5E2ED;
+}
+
 #hero-section {
     width: 100%;
     display: flex;
