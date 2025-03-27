@@ -29,11 +29,13 @@ header h1 {
 header h2 {
     font-size: 1.5em;
     margin: 10px 0;
+    color: #2C4E6E;
 }
 
 header p {
     font-size: 1.2em;
     margin-bottom: 20px;
+    color: #2C4E6E;
 }
 
 nav {
@@ -70,6 +72,9 @@ nav {
     align-items: center;
     justify-content: center;
     padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin: 20px 0;
 }
 
 #hero-image {
@@ -77,6 +82,7 @@ nav {
     max-width: 600px;
     height: auto;
     border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .hero-text {
@@ -93,6 +99,7 @@ nav {
 .hero-text p {
     font-size: 1.2em;
     margin-top: 10px;
+    color: #2C4E6E;
 }
 
 #task-section {
@@ -144,6 +151,13 @@ nav {
     cursor: pointer;
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
 .button-container button {
     padding: 10px 20px;
     font-size: 1em;
@@ -153,7 +167,6 @@ nav {
     border-radius: 5px;
     cursor: pointer;
     width: 120px;
-    margin: 10px;
 }
 
 footer {
