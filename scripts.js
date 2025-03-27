@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const tasks = {
         pm: [
-        "Create a product vision statement for a fitness app.",
+            "Create a product vision statement for a fitness app.",
         "Develop a 3-year product roadmap for an e-commerce platform.",
         "Outline a go-to-market strategy for a new social media app.",
         "Design a product strategy for entering a new geographic market.",
@@ -318,7 +318,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ]
     };
 
-        let currentTasks = pmTasks;
+    let currentTasks = tasks.pm;
     let currentTaskIndex = 0;
 
     function loadTask(index) {
@@ -335,27 +335,51 @@ document.addEventListener('DOMContentLoaded', function () {
         loadTask(currentTaskIndex);
     }
 
-    document.getElementById('pm-section').addEventListener('click', function () {
-        updateSectionTasks(pmTasks);
+    pmSection.addEventListener('click', function () {
+        updateSectionTasks(tasks.pm);
+        setActiveLink(pmSection);
     });
 
-    document.getElementById('sd-section').addEventListener('click', function () {
-        updateSectionTasks(sdTasks);
+    sdSection.addEventListener('click', function () {
+        updateSectionTasks(tasks.sd);
+        setActiveLink(sdSection);
     });
 
-    document.getElementById('ux-section').addEventListener('click', function () {
-        updateSectionTasks(uxTasks);
+    uxSection.addEventListener('click', function () {
+        updateSectionTasks(tasks.ux);
+        setActiveLink(uxSection);
     });
 
     searchInput.addEventListener('input', function () {
         const query = searchInput.value.trim();
-        if (query === '') {
-            filteredTasks = currentTasks;
-        } else {
-            filteredTasks = filterTasks(query);
-        }
+        const filteredTasks = query === '' ? currentTasks : filterTasks(query);
         currentTaskIndex = 0;
         if (filteredTasks.length > 0) {
             loadTask(currentTaskIndex);
         } else {
-            taskContainer.textContent = 'No tasks found
+            taskContainer.textContent = 'No tasks found';
+        }
+    });
+
+    prevTaskBtn.addEventListener('click', function () {
+        if (currentTaskIndex > 0) {
+            currentTaskIndex--;
+            loadTask(currentTaskIndex);
+        }
+    });
+
+    nextTaskBtn.addEventListener('click', function () {
+        if (currentTaskIndex < currentTasks.length - 1) {
+            currentTaskIndex++;
+            loadTask(currentTaskIndex);
+        }
+    });
+
+    function setActiveLink(activeLink) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        activeLink.classList.add('active');
+    }
+
+    // Initialize the first task
+    loadTask(currentTaskIndex);
+});
