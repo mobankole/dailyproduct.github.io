@@ -18,34 +18,36 @@
 
     <nav>
         <ul class="navbar">
-            <li><a href="#" id="pm-section" class="nav-link active">Product Manager</a></li>
-            <li><a href="#" id="sd-section" class="nav-link">Software Development</a></li>
-            <li><a href="#" id="ux-section" class="nav-link">UI/UX Design</a></li>
+            <li><a href="#pm-section" id="pm-section" class="nav-link active">Product Manager</a></li>
+            <li><a href="#sd-section" id="sd-section" class="nav-link">Software Development</a></li>
+            <li><a href="#ux-section" id="ux-section" class="nav-link">UI/UX Design</a></li>
         </ul>
     </nav>
 
-    <section id="hero-section">
-        <img src="hero-image.jpg" alt="Hero Image" id="hero-image">
-        <div class="hero-text">
-            <h2>Build your PM skills</h2>
-            <p>Navigate through daily tasks to sharpen your skills.</p>
-        </div>
-    </section>
+    <main>
+        <section id="hero-section">
+            <img src="hero-image.jpg" alt="An illustrative hero image" id="hero-image">
+            <div class="hero-text">
+                <h2>Build your PM skills</h2>
+                <p>Navigate through daily tasks to sharpen your skills.</p>
+            </div>
+        </section>
 
-    <section id="task-section">
-        <h2>Today's Task</h2>
-        <div id="task-container">
-            <!-- Task will be loaded here -->
-        </div>
-        <div id="search-container">
-            <input type="text" id="search-input" placeholder="Search tasks..." />
-            <button id="search-btn">Search</button>
-        </div>
-        <div class="button-container">
-            <button id="prev-task-btn">Previous</button>
-            <button id="next-task-btn">Next</button>
-        </div>
-    </section>
+        <section id="task-section">
+            <h2>Today's Task</h2>
+            <div id="task-container">
+                <!-- Task will be loaded here -->
+            </div>
+            <div id="search-container">
+                <input type="text" id="search-input" placeholder="Search tasks..." aria-label="Search tasks">
+                <button id="search-btn">Search</button>
+            </div>
+            <div class="button-container">
+                <button id="prev-task-btn">Previous</button>
+                <button id="next-task-btn">Next</button>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2024 PM Daily. All rights reserved.</p>
